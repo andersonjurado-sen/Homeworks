@@ -1,0 +1,37 @@
+Para que sirven los siguientes metodos de los arrays. 
+
+- at(): devuelve el elemento en una posición, aceptando índices negativos para contar desde el final.
+- concat():  une dos o más arrays (o valores) en un array nuevo, sin modificar los originales.
+- constructor: propiedad que indica qué función creó el array.
+- copyWithin(): copia una parte del array dentro de sí mismo, sobrescribiendo elementos, modificando el original.
+- entries(): devuelve un iterador con pares `[índice, valor]`.
+- every(): revisa si TODOS los elementos cumplen una condición; devuelve `true`/`false`.
+- fill(): rellena posiciones del array con un valor fijo, modificando el original.
+- filter(): devuelve un array nuevo solo con los elementos que cumplen una condición.
+- find(): devuelve el primer elemento que cumple una condición, o `undefined`.
+- findIndex(): devuelve el índice del primer elemento que cumple una condición, o `-1`.
+- findLast(): devuelve el primer elemento que cumple una condición, buscando desde el final.
+- findLastIndex(): devuelve el índice del primer elemento que cumple una condición, buscando desde el final.
+- flat(): aplana arrays anidados en un array de menor profundidad, devolviendo uno nuevo.
+- flatMap(): transforma cada elemento (como `map`) y aplana un nivel el resultado, en un solo paso.
+- forEach(): ejecuta una función por cada elemento; no devuelve nada útil.
+- includes(): revisa si un valor existe en el array; devuelve `true`/`false`.
+- indexOf(): devuelve el índice de la primera aparición de un valor, o `-1`.
+- join(): une los elementos del array en un string, con el separador que indiques.
+- keys(): devuelve un iterador con solo los índices del array.
+- lastIndexOf(): devuelve el índice de la última aparición de un valor, o `-1`.
+- map(): transforma cada elemento y devuelve un array nuevo del mismo tamaño.
+- pop(): elimina y devuelve el último elemento del array.
+- push(): agrega uno o más elementos al final del array.
+- reduce(): reduce todo el array a un solo valor acumulado, de izquierda a derecha.
+- reduceRight(): igual que `reduce()`, pero recorriendo de derecha a izquierda.
+- reverse(): invierte el orden de los elementos, modificando el original.
+- shift(): elimina y devuelve el primer elemento del array.
+- slice(): extrae una parte del array y devuelve una copia nueva, sin modificar el original.
+- some(): revisa si AL MENOS UN elemento cumple una condición; devuelve `true`/`false`.
+- sort(): ordena los elementos del array, modificando el original.
+- splice(): agrega, elimina o reemplaza elementos en cualquier posición, modificando el original.
+- toLocaleString(): convierte el array a string, formateando cada elemento según idioma/región.
+- toString(): convierte el array a string, uniendo elementos con comas.
+- unshift(): agrega uno o más elementos al inicio del array.
+- values(): devuelve un iterador con solo los valores del array.
