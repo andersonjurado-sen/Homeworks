@@ -1,0 +1,13 @@
+<div class="app-container">
+  <h1>Gestor de Contactos</h1>
+
+  @if (loading()) {
+    <app-loader></app-loader>
+  } @else {
+    <app-contact-form (add)="onAdd($event)"></app-contact-form>
+    <app-contact-list
+      [contacts]="contacts()"
+      (delete)="onDelete($event)"
+    ></app-contact-list>
+  }
+</div>
