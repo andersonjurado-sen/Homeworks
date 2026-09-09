@@ -1,0 +1,74 @@
+<div class="clinic-container">
+  <header class="clinic-header">
+    <h1>Sistema de Gestión Médica</h1>
+  </header>
+
+  <section class="panel panel-doctor">
+    <h2>Médico de Guardia Actual</h2>
+    <p class="doctor-name">{{ medicoActual || 'Sin médicos' }}</p>
+    <p class="panel-subtext">
+      Rotación automática cada 10 segundos
+    </p>
+    <p class="panel-subtext">
+      <strong>Turno circular:</strong> {{ medicosGuardia.toArray().join(' -> ') }}
+    </p>
+  </section>
+
+  <section class="panel panel-waiting">
+    <h2>Pacientes en Espera</h2>
+
+    <div class="form-row">
+      <input
+        [(ngModel)]="nuevoPaciente"
+        placeholder="Nombre del paciente"
+        class="input-text"
+      />
+      <button (click)="agregarPaciente()" class="btn btn-secondary">
+        Agregar a espera
+      </button>
+      <button (click)="atenderPaciente()" class="btn btn-primary">
+        Atender paciente
+      </button>
+    </div>
+
+    <ul class="list">
+      @for (p of pacientesEspera.toArray(); track p; let i = $index) {
+      <li>
+        <span class="index-badge">{{ i + 1 }}</span>
+        {{ p }}
+      </li>
+  }
+     </ul>
+  </section>
+
+  <section class="panel panel-history">
+    <h2>Historial de Atención</h2>
+    <ul class="list">
+      @for (registro of historialAtencion.toArray(); track registro) {
+        <li>{{ registro }}</li>
+      }
+    </ul>
+  </section>
+
+  <section class="panel panel-committee">
+  <h2>Comité Administrativo</h2>
+
+  @if (comiteActual) {
+    <p class="doctor-name">{{ comiteActual.nombre }}</p>
+    <p class="panel-subtext">{{ comiteActual.cargo }}</p>
+  }
+
+  <div class="form-row">
+    <button (click)="anteriorComite()" class="btn btn-secondary">
+      ◀ Anterior
+    </button>
+    <button (click)="siguienteComite()" class="btn btn-primary">
+      Siguiente ▶
+    </button>
+  </div>
+
+  <p class="panel-subtext">
+    Orden completo: {{ comiteAdmin.toArray().map(c => c.nombre).join(' - ') }}
+  </p>
+</section>
+</div>
