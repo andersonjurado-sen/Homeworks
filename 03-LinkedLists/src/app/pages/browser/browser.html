@@ -1,0 +1,17 @@
+<div class="browser">
+  <h2>Navegador Web</h2>
+  
+  <div class="controls">
+    <button (click)="goBack()" [disabled]="!canGoPrev()">◀ Atrás</button>
+    <button (click)="goForward()" [disabled]="!canGoNext()">Adelante ▶</button>
+  </div>
+
+  @if (currentPage()) {
+    <div class="window">
+      <div class="url-bar">{{ currentPage()!.url }}</div>
+      <div class="content">
+        <h3>{{ currentPage()!.title }}</h3>
+      </div>
+    </div>
+  }
+</div>

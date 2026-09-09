@@ -1,0 +1,14 @@
+<div class="song-player">
+  <h2>Reproductor de canciones</h2>
+
+  @if (currentSong()) {
+    <div class="song-card">
+      <p class="title">{{ currentSong()!.title }}</p>
+      <p class="artist">{{ currentSong()!.artist }}</p>
+    </div>
+  }
+
+  <button (click)="playNext()" [disabled]="!canGoNext()">
+    Siguiente ▶
+  </button>
+</div>

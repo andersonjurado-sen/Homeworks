@@ -1,0 +1,14 @@
+﻿<div class="contact-list">
+  @if (contacts().length === 0) {
+    <p>No hay contactos aun.</p>
+  } @else {
+    <ul>
+      @for (contact of contacts(); track contact.id) {
+        <li>
+          <span>{{ contact.name }} - {{ contact.phone }}</span>
+          <button (click)="onDelete(contact.id)">Eliminar</button>
+        </li>
+      }
+    </ul>
+  }
+</div>

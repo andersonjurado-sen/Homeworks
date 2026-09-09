@@ -1,0 +1,7 @@
+.browser { text-align: center; padding: 2rem; }
+.controls { margin-bottom: 1rem; gap: 10px; display: flex; justify-content: center; }
+.window { border: 2px solid #333; border-radius: 8px; max-width: 400px; margin: 0 auto; overflow: hidden; }
+.url-bar { background: #eee; padding: 0.5rem; font-family: monospace; border-bottom: 1px solid #ccc; text-align: left; }
+.content { padding: 2rem; background: #fff; }
+button { padding: 0.5rem 1rem; cursor: pointer; }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
