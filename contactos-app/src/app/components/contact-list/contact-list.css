@@ -1,0 +1,25 @@
+.contact-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.contact-list button {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contact-list button:hover {
+  background: #c0392b;
+}

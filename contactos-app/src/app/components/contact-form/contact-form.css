@@ -1,0 +1,20 @@
+.contact-form {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.contact-form input {
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact-form button {
+  background: #2ecc71;
+  color: white;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
