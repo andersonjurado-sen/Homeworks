@@ -1,0 +1,30 @@
+<div class="tree-container">
+  <h2>Árbol Binario</h2>
+
+  <section class="traversals">
+    <h3>Recorridos</h3>
+    <p><strong>PreOrder:</strong> {{ preOrderResult().join(', ') }}</p>
+    <p><strong>InOrder:</strong> {{ inOrderResult().join(', ') }}</p>
+    <p><strong>PostOrder:</strong> {{ postOrderResult().join(', ') }}</p>
+  </section>
+
+  <section class="search">
+    <h3>Buscar un valor</h3>
+    <div class="form-row">
+      <input
+        type="number"
+        [(ngModel)]="searchValue"
+        placeholder="Número a buscar"
+      />
+      <button (click)="buscar()">Buscar</button>
+    </div>
+    @if (searchResult()) {
+      <p class="search-result">{{ searchResult() }}</p>
+    }
+  </section>
+
+  <section class="visualization">
+    <h3>Visualización del árbol</h3>
+    <app-tree-chart [root]="tree.root"></app-tree-chart>
+  </section>
+</div>

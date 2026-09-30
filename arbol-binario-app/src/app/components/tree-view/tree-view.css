@@ -1,0 +1,37 @@
+.tree-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  font-family: sans-serif;
+}
+
+.traversals, .search {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #f4f8fb;
+  border-radius: 6px;
+}
+
+.form-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+input {
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 0.4rem 1rem;
+  background: #2e6f95;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-result {
+  margin-top: 0.75rem;
+  font-weight: bold;
+}
