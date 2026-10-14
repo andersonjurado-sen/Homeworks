@@ -1,0 +1,12 @@
+@if (auth.initializing()) {
+  <p class="center">Cargando...</p>
+} @else if (auth.currentUser()) {
+  <header class="topbar">
+    <span>Sesión: {{ auth.currentUser()?.email }}</span>
+    <button (click)="auth.logout()">Cerrar sesión</button>
+  </header>
+
+  <app-tree-explorer></app-tree-explorer>
+} @else {
+  <app-login></app-login>
+}

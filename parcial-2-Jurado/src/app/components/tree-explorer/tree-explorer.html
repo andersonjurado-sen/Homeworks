@@ -1,0 +1,33 @@
+<section class="explorer">
+  <h2>Carpetas y archivos</h2>
+
+  <form class="create" (ngSubmit)="onCreate()">
+    <input [(ngModel)]="name" name="name" placeholder="Nombre" />
+
+    <select [(ngModel)]="type" name="type">
+      <option value="folder">Carpeta</option>
+      <option value="file">Archivo</option>
+    </select>
+
+    <button type="submit">Crear en «{{ selectedName() }}»</button>
+  </form>
+
+  @if (error()) {
+    <p class="error">{{ error() }}</p>
+  }
+
+  <p class="hint">Haz clic en una carpeta para elegir dónde crear.</p>
+
+  @if (loading()) {
+    <p>Cargando árbol...</p>
+  } @else {
+    <div class="tree">
+            <app-tree-item
+        [node]="tree().root"
+        [selectedId]="selectedId()"
+        [userEmail]="userEmail()"
+        (selected)="selectedId.set($event)"
+      ></app-tree-item>
+    </div>
+  }
+</section>

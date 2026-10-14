@@ -1,0 +1,24 @@
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: #16324f;
+  color: white;
+  font-family: sans-serif;
+}
+
+.topbar button {
+  padding: 0.4rem 0.8rem;
+  background: #6b8fa8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.center {
+  text-align: center;
+  font-family: sans-serif;
+  margin-top: 2rem;
+}

@@ -1,0 +1,49 @@
+.explorer {
+  max-width: 700px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+  font-family: sans-serif;
+}
+
+.create {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+input, select {
+  padding: 0.5rem;
+  border: 1px solid #b0c4de;
+  border-radius: 4px;
+}
+
+input {
+  flex: 1;
+  min-width: 160px;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background: #2e6f95;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.hint {
+  color: #5a7184;
+  font-size: 0.85rem;
+}
+
+.error {
+  color: #c0392b;
+  margin: 0.5rem 0;
+}
+
+.tree {
+  padding: 0.75rem;
+  background: #f4f8fb;
+  border: 1px solid #d3e0ea;
+  border-radius: 6px;
+}

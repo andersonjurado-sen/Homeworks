@@ -1,0 +1,36 @@
+.row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+}
+
+.row.selectable {
+  cursor: pointer;
+}
+
+.row.selectable:hover {
+  background: #e3edf5;
+}
+
+.row.locked {
+  color: #7a8a99;
+  cursor: not-allowed;
+}
+
+.row.selected {
+  background: #cfe3f1;
+  font-weight: 600;
+}
+
+.owner {
+  color: #5a7184;
+  font-size: 0.8rem;
+}
+
+.children {
+  margin-left: 1.25rem;
+  padding-left: 0.5rem;
+  border-left: 1px solid #d3e0ea;
+}

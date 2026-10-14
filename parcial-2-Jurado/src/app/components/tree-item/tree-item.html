@@ -1,0 +1,32 @@
+<div
+  class="row"
+  [class.selectable]="canSelect()"
+  [class.locked]="isLockedFolder()"
+  [class.selected]="node().data.id === selectedId()"
+  [title]="isLockedFolder() ? 'Carpeta de otro usuario: solo lectura' : ''"
+  (click)="onClick()"
+>
+  <span>{{ node().data.type === 'folder' ? '📁' : '📄' }}</span>
+  <span class="name">{{ node().data.name }}</span>
+
+  @if (isLockedFolder()) {
+    <span>🔒</span>
+  }
+
+  @if (node().data.createdBy !== 'system') {
+    <span class="owner">{{ node().data.createdBy }}</span>
+  }
+</div>
+
+@if (node().children.length > 0) {
+  <div class="children">
+    @for (child of node().children; track child.data.id) {
+      <app-tree-item
+        [node]="child"
+        [selectedId]="selectedId()"
+        [userEmail]="userEmail()"
+        (selected)="selected.emit($event)"
+      ></app-tree-item>
+    }
+  </div>
+}
