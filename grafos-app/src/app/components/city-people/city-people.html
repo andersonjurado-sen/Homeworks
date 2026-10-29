@@ -1,0 +1,30 @@
+<section class="city-people">
+  <h2>Personas por ciudad</h2>
+
+  <label>
+    Ciudad
+    <select (change)="onSelect($event)">
+      <option value="">Elige una ciudad</option>
+      @for (c of store.cities(); track c.id) {
+        <option [value]="c.id" [selected]="c.id === selectedCityId()">
+          {{ c.name }}
+        </option>
+      }
+    </select>
+  </label>
+
+  @if (selectedCity(); as city) {
+    <h3>Viven en {{ city.name }} ({{ residents().length }})</h3>
+
+    <ul>
+      @for (p of residents(); track p.id) {
+        <li>
+          <span>{{ p.name }}</span>
+          <span class="age">{{ p.age }} años</span>
+        </li>
+      } @empty {
+        <li class="vacio">Nadie vive aquí todavía</li>
+      }
+    </ul>
+  }
+</section>

@@ -1,0 +1,65 @@
+.chart {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f4f8fb;
+  border: 1px solid #d3e0ea;
+  border-radius: 6px;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+  color: #5a7184;
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.dot {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+
+.dot.city {
+  background: #2e6f95;
+}
+
+.dot.person {
+  background: #6bbf8a;
+}
+
+.line {
+  display: inline-block;
+  width: 24px;
+  height: 0;
+}
+
+.line.lives {
+  border-top: 2px dashed #9bb4c8;
+}
+
+.line.friend {
+  border-top: 3px solid #e08a3c;
+}
+
+.canvas {
+  background: #ffffff;
+  border: 1px solid #d3e0ea;
+  border-radius: 4px;
+}
+
+.hint {
+  margin: 0.5rem 0 0;
+  font-size: 0.85rem;
+  color: #5a7184;
+}

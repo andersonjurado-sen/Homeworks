@@ -1,0 +1,52 @@
+<section class="forms">
+  <h2>Agregar al grafo</h2>
+
+  <div class="grid">
+    <form (ngSubmit)="onAddCity()">
+      <h3>Ciudad</h3>
+      <input name="cityName" [(ngModel)]="cityName" placeholder="Nombre de la ciudad" />
+      <button type="submit">Agregar ciudad</button>
+    </form>
+
+    <form (ngSubmit)="onAddPerson()">
+      <h3>Persona</h3>
+      <input name="personName" [(ngModel)]="personName" placeholder="Nombre" />
+      <input
+        name="personAge"
+        type="number"
+        min="0"
+        max="120"
+        [(ngModel)]="personAge"
+        placeholder="Edad"
+      />
+      <select name="personCity" [(ngModel)]="personCityId">
+        <option value="">Ciudad donde vive</option>
+        @for (c of store.cities(); track c.id) {
+          <option [value]="c.id">{{ c.name }}</option>
+        }
+      </select>
+      <button type="submit">Agregar persona</button>
+    </form>
+
+    <form (ngSubmit)="onAddFriendship()">
+      <h3>Amistad</h3>
+      <select name="friendA" [(ngModel)]="friendA">
+        <option value="">Primera persona</option>
+        @for (p of store.people(); track p.id) {
+          <option [value]="p.id">{{ p.name }} ({{ store.cityOf(p.id)?.name }})</option>
+        }
+      </select>
+      <select name="friendB" [(ngModel)]="friendB">
+        <option value="">Segunda persona</option>
+        @for (p of store.people(); track p.id) {
+          <option [value]="p.id">{{ p.name }} ({{ store.cityOf(p.id)?.name }})</option>
+        }
+      </select>
+      <button type="submit">Unir</button>
+    </form>
+  </div>
+
+  @if (status(); as s) {
+    <p class="status" [class.ok]="s.ok" [class.error]="!s.ok">{{ s.text }}</p>
+  }
+</section>
