@@ -1,0 +1,83 @@
+.tareas {
+  max-width: 520px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+  font-family: sans-serif;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #5a7184;
+}
+
+.nueva {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nueva input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #b0c4de;
+  border-radius: 4px;
+}
+
+button {
+  padding: 0.45rem 0.9rem;
+  background: #2e6f95;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: #6b8fa8;
+}
+
+button.borrar {
+  margin-left: auto;
+  background: #c0392b;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.25rem;
+  border-bottom: 1px solid #e0e8ee;
+}
+
+.hecha {
+  text-decoration: line-through;
+  color: #8a99a6;
+}
+
+.vacio {
+  color: #5a7184;
+  justify-content: center;
+}
+
+.error {
+  color: #c0392b;
+  font-size: 0.9rem;
+}
+
+.acciones {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.acciones a {
+  color: #2e6f95;
+}

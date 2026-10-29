@@ -1,0 +1,20 @@
+<div class="login-card">
+  <h2>Mis tareas</h2>
+  <p class="hint">Inicia sesión o crea una cuenta</p>
+
+  <form (ngSubmit)="entrar()">
+    <input type="email" name="email" [(ngModel)]="email" placeholder="Correo" />
+    <input type="password" name="clave" [(ngModel)]="clave" placeholder="Contraseña" />
+
+    <div class="actions">
+      <button type="submit" [disabled]="cargando()">Entrar</button>
+      <button type="button" class="secondary" (click)="registrar()" [disabled]="cargando()">
+        Crear cuenta
+      </button>
+    </div>
+  </form>
+
+  @if (msg()) {
+    <p class="msg">{{ msg() }}</p>
+  }
+</div>

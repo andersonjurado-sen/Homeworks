@@ -1,0 +1,55 @@
+.login-card {
+  max-width: 340px;
+  margin: 4rem auto;
+  padding: 1.5rem;
+  background: #f4f8fb;
+  border: 1px solid #d3e0ea;
+  border-radius: 6px;
+  font-family: sans-serif;
+}
+
+.hint {
+  color: #5a7184;
+  font-size: 0.9rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+input {
+  padding: 0.5rem;
+  border: 1px solid #b0c4de;
+  border-radius: 4px;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+button {
+  flex: 1;
+  padding: 0.5rem;
+  background: #2e6f95;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: #6b8fa8;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.msg {
+  color: #c0392b;
+  font-size: 0.9rem;
+}

@@ -1,0 +1,21 @@
+<div class="perfil">
+  <a routerLink="/tareas">← Volver a mis tareas</a>
+
+  <h1>Mi perfil</h1>
+  <p class="correo">{{ auth.session()?.user?.email }}</p>
+
+  @if (url()) {
+    <img [src]="url()" alt="Mi foto de perfil" class="foto" />
+  } @else {
+    <div class="foto vacia">Sin foto</div>
+  }
+
+  <label class="subir">
+    {{ cargando() ? 'Subiendo...' : 'Elegir imagen' }}
+    <input type="file" accept="image/*" (change)="subir($event)" [disabled]="cargando()" />
+  </label>
+
+  @if (msg()) {
+    <p class="msg">{{ msg() }}</p>
+  }
+</div>

@@ -1,0 +1,47 @@
+.perfil {
+  max-width: 420px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.correo {
+  color: #5a7184;
+}
+
+.foto {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #d3e0ea;
+}
+
+.foto.vacia {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  background: #f4f8fb;
+  color: #5a7184;
+}
+
+.subir {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #2e6f95;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.subir input {
+  display: none;
+}
+
+.msg {
+  margin-top: 0.75rem;
+  color: #2e6f95;
+}
