@@ -1,0 +1,44 @@
+<section>
+  <label class="field" for="q">Prefijo</label>
+  <input
+    id="q"
+    type="text"
+    [value]="prefix()"
+    (input)="onPrefix($event)"
+    placeholder="Escribe un prefijo, por ejemplo: air"
+  />
+
+  <div class="row">
+    @if (prefix().trim()) {
+      <p class="hint">Los {{ k() }} más populares que empiezan con «{{ prefix().trim() }}»</p>
+    } @else {
+      <p class="hint">Sin prefijo: los {{ k() }} más populares de los {{ total() }} productos</p>
+    }
+
+    <label class="topk">
+      Top
+      <select (change)="onK($event)">
+        @for (n of options; track n) {
+          <option [value]="n" [selected]="n === k()">{{ n }}</option>
+        }
+      </select>
+    </label>
+  </div>
+
+  <ol class="results">
+    @for (p of results(); track p.name; let i = $index) {
+      <li [class.first]="i === 0">
+        <span class="rank">{{ i + 1 }}</span>
+
+        <div class="info">
+          <span class="name">{{ p.name }}</span>
+          <span class="bar"><span class="fill" [style.width.%]="percent(p.popularity)"></span></span>
+        </div>
+
+        <span class="pop">{{ p.popularity }}</span>
+      </li>
+    } @empty {
+      <li class="empty">Sin resultados</li>
+    }
+  </ol>
+</section>

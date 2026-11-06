@@ -1,0 +1,45 @@
+:root {
+  --bg: #0a0a12;
+  --surface: #11111c;
+  --surface-2: #171728;
+  --line: #26263f;
+  --text: #e8e8f4;
+  --muted: #8a8aa8;
+  --purple: #8b5cf6;
+  --purple-dark: #6d28d9;
+  --blue: #4f6bed;
+  --ok: #4ade80;
+  --error: #fb7185;
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border-radius: 0;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+input,
+select,
+button {
+  font: inherit;
+  color: inherit;
+}
+
+::selection {
+  background: var(--purple);
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--purple);
+  outline-offset: 2px;
+}/* You can add global styles to this file, and also import other style files */

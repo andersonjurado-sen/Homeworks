@@ -1,0 +1,19 @@
+<aside>
+  <h2>Nuevo producto</h2>
+
+  <form (ngSubmit)="onSubmit()">
+    <label for="name">Nombre</label>
+    <input id="name" name="name" [(ngModel)]="name" />
+
+    <label for="popularity">Popularidad</label>
+    <input id="popularity" name="popularity" type="number" min="0" [(ngModel)]="popularity" />
+
+    <button type="submit">Guardar</button>
+  </form>
+
+  @if (status(); as s) {
+    <p class="status" [class.ok]="s.ok" [class.error]="!s.ok">{{ s.text }}</p>
+  }
+
+  <p class="hint">Si el producto ya existe, se actualiza su popularidad.</p>
+</aside>
