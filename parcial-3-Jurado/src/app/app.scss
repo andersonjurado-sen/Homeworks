@@ -1,0 +1,166 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+:host {
+  display: block;
+}
+
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: $sidebar-width;
+  padding: 2rem 1.5rem;
+  background: $surface;
+  border-right: 1px solid $line;
+  overflow-y: auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+
+  .mark {
+    display: grid;
+    place-items: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    background: $accent;
+    color: #04120d;
+    font-size: 1.4rem;
+    border-radius: $radius;
+  }
+
+  h1 {
+    margin: 0;
+    font-family: $font-display;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin: 0.2rem 0 0;
+    @include label-caps;
+    font-size: 0.62rem;
+  }
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+
+  .caption {
+    margin: 0 0 0.75rem;
+    @include label-caps;
+  }
+
+  a {
+    padding: 0.7rem 0 0.7rem 1rem;
+    color: $muted;
+    border-left: 2px solid $line;
+    text-decoration: none;
+    transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+
+    &:hover {
+      color: $text;
+      border-left-color: $accent;
+      background: $accent-soft;
+    }
+  }
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin: 0;
+
+  div {
+    padding-top: 1rem;
+    border-top: 1px solid $line;
+  }
+
+  dt {
+    @include label-caps;
+  }
+
+  dd {
+    margin: 0.3rem 0 0;
+    color: $gold;
+    font-family: $font-display;
+    font-size: 2rem;
+  }
+}
+
+footer {
+  margin-top: auto;
+  @include label-caps;
+  font-size: 0.62rem;
+}
+
+.content {
+  min-height: 100vh;
+  margin-left: $sidebar-width;
+  padding: 2.5rem 3rem 4rem;
+  background: radial-gradient(900px 420px at 85% -5%, rgba($accent, 0.07), transparent 60%);
+}
+
+.hero {
+  margin-bottom: 2.5rem;
+
+  .eyebrow {
+    margin: 0 0 0.6rem;
+    @include label-caps;
+    color: $accent;
+  }
+
+  h2 {
+    max-width: 18ch;
+    margin: 0;
+    font-family: $font-display;
+    font-size: 2.8rem;
+    font-weight: 400;
+    line-height: 1.1;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: $gap;
+  align-items: start;
+}
+
+app-search {
+  grid-column: 1 / -1;
+}
+
+@include respond {
+  .sidebar {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    width: auto;
+    border-right: none;
+    border-bottom: 1px solid $line;
+  }
+
+  .content {
+    margin-left: 0;
+    padding: 1.5rem 1rem 3rem;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,38 @@
+<section class="panel">
+  <h3>Relacionadas</h3>
+
+  @if (store.selected(); as current) {
+    <p class="caption">Porque te gusta</p>
+    <p class="current">{{ current.title }} <span>· {{ current.artist }}</span></p>
+
+    <ul class="list">
+      @for (s of related(); track s.id) {
+        <li>
+          <button class="link" type="button" (click)="choose(s.id)">
+            <span class="title">{{ s.title }}</span>
+            <span class="artist">{{ s.artist }}</span>
+          </button>
+          <span class="plays">{{ s.plays | number }}</span>
+        </li>
+      } @empty {
+        <li class="none">Esta canción todavía no tiene relacionadas</li>
+      }
+    </ul>
+
+    <form class="relate" (ngSubmit)="onRelate()">
+      <select class="field" name="target" [(ngModel)]="target">
+        <option value="">Relacionar con…</option>
+        @for (c of candidates(); track c.id) {
+          <option [value]="c.id">{{ c.title }} — {{ c.artist }}</option>
+        }
+      </select>
+      <button class="solid" type="submit">Conectar</button>
+    </form>
+
+    @if (status(); as s) {
+      <p class="status" [class.ok]="s.ok" [class.error]="!s.ok">{{ s.text }}</p>
+    }
+  } @else {
+    <p class="empty">Elige una canción en el buscador o en el ranking para ver recomendaciones.</p>
+  }
+</section>

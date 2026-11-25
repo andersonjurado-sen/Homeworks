@@ -1,0 +1,108 @@
+@use 'variables' as *;
+
+@mixin respond($bp: $breakpoint-md) {
+  @media (max-width: $bp) {
+    @content;
+  }
+}
+
+@mixin label-caps {
+  color: $muted;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+@mixin panel {
+  background: $surface;
+  border: 1px solid $line;
+  border-radius: $radius;
+}
+
+@mixin section-title {
+  margin: 0 0 1.5rem;
+  color: $text;
+  font-family: $font-display;
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 2.5rem;
+    height: 2px;
+    margin-top: 0.6rem;
+    background: $gold;
+  }
+}
+
+@mixin field {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  background: $surface-2;
+  color: $text;
+  border: 1px solid $line;
+  border-radius: $radius;
+  font: inherit;
+  transition: border-color 0.15s ease, background 0.15s ease;
+
+  &::placeholder {
+    color: $muted;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $accent;
+    background: $surface-3;
+  }
+}
+
+@mixin button-solid {
+  padding: 0.8rem 1.4rem;
+  background: $accent;
+  color: #04120d;
+  border: none;
+  border-radius: $radius;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: $accent-hover;
+  }
+}
+
+@mixin button-ghost {
+  padding: 0.5rem 0.9rem;
+  background: transparent;
+  color: $text;
+  border: 1px solid $line-strong;
+  border-radius: $radius;
+  font: inherit;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    border-color: $accent;
+    color: $accent;
+  }
+}
+
+@mixin mono-number {
+  font-family: $font-mono;
+  font-variant-numeric: tabular-nums;
+}
+
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

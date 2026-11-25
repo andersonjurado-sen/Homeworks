@@ -1,0 +1,70 @@
+<section class="panel">
+  <h3>Buscar</h3>
+
+  <div class="cols">
+    <div class="finder">
+      <label class="caption" for="q">Título o prefijo</label>
+      <input
+        id="q"
+        class="field"
+        type="text"
+        autocomplete="off"
+        [value]="query()"
+        (input)="onQuery($event)"
+        placeholder="Empieza a escribir: bil, bohe, cora…"
+      />
+
+      @if (query().trim()) {
+        @if (exact()) {
+          <p class="verdict ok">✓ Esa canción existe en el catálogo</p>
+        } @else {
+          <p class="verdict">No hay una canción con ese título exacto</p>
+        }
+      }
+
+      <ul class="list">
+        @for (s of suggestions(); track s.id) {
+          <li>
+            <div class="meta">
+              <span class="title">{{ s.title }}</span>
+              <span class="artist">{{ s.artist }}</span>
+            </div>
+            <span class="plays">{{ s.plays | number }}</span>
+            <button class="ghost" type="button" title="Reproducir" (click)="listen(s.id)">▶</button>
+            <button class="ghost" type="button" (click)="choose(s.id)">Relacionadas</button>
+          </li>
+        } @empty {
+          @if (query().trim()) {
+            <li class="none">Sin sugerencias para este prefijo</li>
+          } @else {
+            <li class="none">Escribe para ver sugerencias</li>
+          }
+        }
+      </ul>
+    </div>
+
+    <form class="adder" (ngSubmit)="onAdd()">
+      <h4>Agregar canción</h4>
+
+      <label class="caption" for="title">Título</label>
+      <input id="title" name="title" class="field" [(ngModel)]="title" />
+
+      <label class="caption" for="artist">Artista</label>
+      <input id="artist" name="artist" class="field" [(ngModel)]="artist" />
+
+      <label class="caption" for="rel">Relacionar con (opcional)</label>
+      <select id="rel" name="rel" class="field" [(ngModel)]="relateWith">
+        <option value="">Ninguna</option>
+        @for (s of store.songs(); track s.id) {
+          <option [value]="s.id">{{ s.title }} — {{ s.artist }}</option>
+        }
+      </select>
+
+      <button class="solid" type="submit">Agregar</button>
+
+      @if (status(); as s) {
+        <p class="status" [class.ok]="s.ok" [class.error]="!s.ok">{{ s.text }}</p>
+      }
+    </form>
+  </div>
+</section>

@@ -1,0 +1,42 @@
+<aside class="sidebar">
+  <div class="brand">
+    <span class="mark">♪</span>
+    <div>
+      <h1>Sonora</h1>
+      <p>Música educativa</p>
+    </div>
+  </div>
+
+  <nav>
+    <p class="caption">Explorar</p>
+    <a href="#buscar">Buscar</a>
+    <a href="#ranking">Ranking</a>
+    <a href="#relacionadas">Relacionadas</a>
+  </nav>
+
+  <dl class="stats">
+    <div>
+      <dt>Canciones</dt>
+      <dd>{{ store.total() }}</dd>
+    </div>
+    <div>
+      <dt>Reproducciones</dt>
+      <dd>{{ totalPlays() | number }}</dd>
+    </div>
+  </dl>
+
+  <footer>Trie · Max Heap · Grafo</footer>
+</aside>
+
+<main class="content">
+  <header class="hero">
+    <p class="eyebrow">Panel de música</p>
+    <h2>Encuentra, escucha y descubre</h2>
+  </header>
+
+  <div class="grid">
+    <app-search id="buscar" />
+    <app-ranking id="ranking" />
+    <app-related id="relacionadas" />
+  </div>
+</main>
